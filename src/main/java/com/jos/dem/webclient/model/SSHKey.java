@@ -8,8 +8,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SSHKey {
-  Long id
-  String key
+  Long id;
+  String key;
 }
 
 

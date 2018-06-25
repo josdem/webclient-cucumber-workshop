@@ -1,7 +1,9 @@
 package com.jos.dem.webclient.service;
 
+import reactor.core.publisher.Flux;
+
 public interface GitHubService {
 
-  List<SSHKey> getKeys();
+  Flux<SSHKey> getKeys();
 
 }

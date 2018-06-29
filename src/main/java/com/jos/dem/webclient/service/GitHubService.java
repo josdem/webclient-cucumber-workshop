@@ -6,5 +6,6 @@ import com.jos.dem.webclient.model.SSHKey;
 public interface GitHubService {
 
   Flux<SSHKey> getKeys();
+  Flux<PublicEmail> getEmails();
 
 }

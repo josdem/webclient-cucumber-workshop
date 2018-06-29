@@ -15,8 +15,13 @@ public class GitHubServiceImpl implements GitHubService {
   private WebClient webClient;
 
   public Flux<SSHKey> getKeys() {
-    return webClient.get().uri("").retrieve()
+    return webClient.get().uri("/josdem/keys").retrieve()
     .bodyToFlux(SSHKey.class);
+  }
+
+  public Flux<PublicEmail> getEmails() {
+    return webClient.get().uri("/public_emails").retrieve()
+    .bodyToFlux(PublicEmail.class);
   }
 
 }

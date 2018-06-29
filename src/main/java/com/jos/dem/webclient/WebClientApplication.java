@@ -10,7 +10,7 @@ public class WebClientApplication {
 
   @Bean
   public WebClient webClient() {
-    return WebClient.create("https://api.github.com/users/josdem/keys");
+    return WebClient.create("https://api.github.com/users");
   }
 
 	public static void main(String[] args) {

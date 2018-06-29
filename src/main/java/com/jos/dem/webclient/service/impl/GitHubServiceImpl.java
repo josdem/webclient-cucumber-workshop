@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 import com.jos.dem.webclient.model.SSHKey;
+import com.jos.dem.webclient.model.PublicEmail;
 import com.jos.dem.webclient.service.GitHubService;
 
 @Service

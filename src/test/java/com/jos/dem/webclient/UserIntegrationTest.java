@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import com.jos.dem.webclient.model.SSHKey;
+import com.jos.dem.webclient.model.PublicEmail;
 import com.jos.dem.webclient.service.GitHubService;
 
 import reactor.core.publisher.Flux;
@@ -23,6 +24,10 @@ public class UserIntegrationTest {
 
   Flux<SSHKey> getKeys() throws Exception {
     return gitHubService.getKeys();
+  }
+
+  Flux<PublicEmail> getEmails() throws Exception {
+    return gitHubService.getEmails();
   }
 
 }

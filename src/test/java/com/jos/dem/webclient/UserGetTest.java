@@ -34,7 +34,7 @@ public class UserGetTest extends UserIntegrationTest {
       .block();
 
     assertTrue(emails.size() == 1,  () -> "Should be 1 email");
-    assertTrue(keys.contains(new PublicEmail("joseluis.delacruz@gmail.com", true, true, "public")), () -> "Should contains josdem's primary email");
+    assertTrue(emails.contains(new PublicEmail("joseluis.delacruz@gmail.com", true, true, "public")), () -> "Should contains josdem's primary email");
   }
 
 }

@@ -12,11 +12,12 @@ import org.springframework.beans.factory.annotation.Value;
 @SpringBootApplication
 public class WebClientApplication {
 
-  private final static String USERNAME = "josdem";
-  private final static String TOKEN = "0601263c733ef575eaaa43d254e79aae6ae9ac42";
-
-  @Value("${url}")
+  @Value("${gitHubUrl}")
   private String gitHubUrl;
+  @Value("${username}")
+  private String username;
+  @Value("${token}")
+  private String token;
 
   @Bean
   public WebClient webClient() {

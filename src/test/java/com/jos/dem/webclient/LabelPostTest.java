@@ -1,5 +1,6 @@
 package com.jos.dem.webclient;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.jos.dem.webclient.model.LabelResponse;
@@ -14,12 +15,16 @@ public class LabelPostTest extends LabelIntegrationTest {
 
   private LabelResponse response;
 
-  @Then("^User createsa new label$")
+  @Then("^User creates a new label$")
   public void shouldCreateLabel() throws Exception {
     LabelResponse response = create()
       .block();
 
-    assertEquals("Cucumber is a very powerful testing framework written in the Ruby programming language", response.getDescription());
+    assertAll("response",
+      () -> assertEquals("cucumber", response.getName()),
+      () -> assertEquals("ed14c5", response.getColor()),
+      () -> assertEquals("Cucumber is a very powerful testing framework written in the Ruby programming language", response.getDescription())
+    );
   }
 
 }

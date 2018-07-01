@@ -7,10 +7,10 @@ import reactor.core.publisher.Flux;
 
 import com.jos.dem.webclient.model.SSHKey;
 import com.jos.dem.webclient.model.PublicEmail;
-import com.jos.dem.webclient.service.GitHubService;
+import com.jos.dem.webclient.service.UserService;
 
 @Service
-public class GitHubServiceImpl implements GitHubService {
+public class UserServiceImpl implements UserService {
 
   @Autowired
   private WebClient webClient;

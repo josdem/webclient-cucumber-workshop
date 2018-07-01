@@ -15,7 +15,7 @@ public class LabelServiceImpl implements LabelService {
   private WebClient webClient;
 
   public Flux<LabelResponse> create() {
-    return webClient.get().uri("").retrieve()
+    return webClient.get().uri("/repos/josdem/webclient-workshop/labels").retrieve()
     .bodyToFlux(LabelResponse.class);
   }
 

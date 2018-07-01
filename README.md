@@ -10,5 +10,5 @@ Webflux web client configuration and examples using [GitHub API v3](https://deve
 
 #### Configuration and Run
 
-https://github.com/josdem/vetlog-spring-boot/wiki
+https://github.com/josdem/webclient-workshop/wiki
 

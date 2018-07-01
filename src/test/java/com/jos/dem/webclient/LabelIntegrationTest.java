@@ -9,9 +9,8 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
-import com.jos.dem.webclient.model.SSHKey;
-import com.jos.dem.webclient.model.PublicEmail;
-import com.jos.dem.webclient.service.UserService;
+import com.jos.dem.webclient.model.LabelResponse;
+import com.jos.dem.webclient.service.LabelService;
 
 import reactor.core.publisher.Flux;
 
@@ -20,14 +19,10 @@ import reactor.core.publisher.Flux;
 public class UserIntegrationTest {
 
   @Autowired
-  private UserService userService;
+  private LabelService labelService;
 
-  Flux<SSHKey> getKeys() throws Exception {
-    return gitHubService.getKeys();
-  }
-
-  Flux<PublicEmail> getEmails() throws Exception {
-    return gitHubService.getEmails();
+  Flux<LabelResponse> create() throws Exception {
+    return labelService.create();
   }
 
 }

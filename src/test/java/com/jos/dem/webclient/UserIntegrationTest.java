@@ -23,11 +23,11 @@ public class UserIntegrationTest {
   private UserService userService;
 
   Flux<SSHKey> getKeys() throws Exception {
-    return gitHubService.getKeys();
+    return userService.getKeys();
   }
 
   Flux<PublicEmail> getEmails() throws Exception {
-    return gitHubService.getEmails();
+    return userService.getEmails();
   }
 
 }

@@ -12,16 +12,16 @@ import org.junit.jupiter.api.DisplayName;
 import com.jos.dem.webclient.model.LabelResponse;
 import com.jos.dem.webclient.service.LabelService;
 
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @ContextConfiguration(classes = WebClientApplication.class)
 @WebAppConfiguration
-public class UserIntegrationTest {
+public class LabelIntegrationTest {
 
   @Autowired
   private LabelService labelService;
 
-  Flux<LabelResponse> create() throws Exception {
+  Mono<LabelResponse> create() throws Exception {
     return labelService.create();
   }
 

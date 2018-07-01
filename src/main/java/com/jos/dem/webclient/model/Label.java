@@ -9,6 +9,6 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 public class Label {
   private String name;
-  private description;
-  private color;
+  private String description;
+  private String color;
 }

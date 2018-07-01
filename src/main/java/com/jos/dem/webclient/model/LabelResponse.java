@@ -13,6 +13,6 @@ public class LabelResponse {
   private String url;
   private String name;
   private String description;
-  private String color;,
-  private boolean default;
+  private String color;
+  private boolean _default;
 }

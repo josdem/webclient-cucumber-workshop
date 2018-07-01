@@ -7,19 +7,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.beans.factory.annotation.Value;
 
 @SpringBootApplication
 public class WebClientApplication {
 
-  private final static String GITHUB_API_URL = "https://api.github.com/";
   private final static String USERNAME = "josdem";
   private final static String TOKEN = "0601263c733ef575eaaa43d254e79aae6ae9ac42";
+
+  @Value("${url}")
+  private String gitHubUrl;
 
   @Bean
   public WebClient webClient() {
     return WebClient
       .builder()
-        .baseUrl(GITHUB_API_URL)
+        .baseUrl(gitHubUrl)
         .defaultHeader("Authorization", "Basic " + Base64Utils
           .encodeToString((USERNAME + ":" + TOKEN).getBytes(UTF_8)))
       .build();

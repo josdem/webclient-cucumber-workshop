@@ -25,7 +25,7 @@ public class WebClientApplication {
       .builder()
         .baseUrl(gitHubUrl)
         .defaultHeader("Authorization", "Basic " + Base64Utils
-          .encodeToString((USERNAME + ":" + TOKEN).getBytes(UTF_8)))
+          .encodeToString((username + ":" + token).getBytes(UTF_8)))
       .build();
   }
 

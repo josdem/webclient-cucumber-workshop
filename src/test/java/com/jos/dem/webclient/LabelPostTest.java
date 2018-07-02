@@ -22,8 +22,7 @@ public class LabelPostTest extends LabelIntegrationTest {
 
     assertAll("response",
       () -> assertEquals("cucumber", response.getName()),
-      () -> assertEquals("ed14c5", response.getColor()),
-      () -> assertEquals("Cucumber is a very powerful testing framework written in the Ruby programming language", response.getDescription())
+      () -> assertEquals("ed14c5", response.getColor())
     );
   }
 

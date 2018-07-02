@@ -4,15 +4,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class LabelResponse {
   private Long id;
+
+  @JsonProperty("node_id")
   private String nodeId;
+
   private String url;
   private String name;
-  private String description;
   private String color;
-  private boolean _default;
+
+  @JsonProperty("default")
+  private boolean status;
 }

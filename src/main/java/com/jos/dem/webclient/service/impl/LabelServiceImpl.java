@@ -37,7 +37,7 @@ public class LabelServiceImpl implements LabelService {
 
   public Mono<ClientResponse> update(String name){
     return webClient.patch()
-      .uri(githubLabelsPath + name).accept(APPLICATION_JSON)
+      .uri(githubLabelsPath + "/" + name).accept(APPLICATION_JSON)
       .body(Mono.just(labelCreator.update()), Label.class)
       .exchange();
   }

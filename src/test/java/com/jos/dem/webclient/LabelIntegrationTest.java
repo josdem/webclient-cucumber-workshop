@@ -8,6 +8,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.springframework.web.reactive.function.client.ClientResponse;
 
 import com.jos.dem.webclient.model.LabelResponse;
 import com.jos.dem.webclient.service.LabelService;

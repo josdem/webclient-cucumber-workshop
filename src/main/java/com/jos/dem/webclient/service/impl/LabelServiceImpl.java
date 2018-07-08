@@ -4,6 +4,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -32,6 +33,12 @@ public class LabelServiceImpl implements LabelService {
       .body(Mono.just(label), Label.class)
       .retrieve()
       .bodyToMono(LabelResponse.class);
+  }
+
+  public Mono<ClientResponse> update(String name){
+    return webClient.patch()
+      .uri("/repos/josdem/webclient-workshop/labels/" + name).accept(APPLICATION_JSON)
+      .exchange();
   }
 
 }

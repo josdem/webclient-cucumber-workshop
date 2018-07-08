@@ -25,4 +25,8 @@ public class LabelIntegrationTest {
     return labelService.create();
   }
 
+  Mono<ClientResponse> update(String name) throws Exception {
+    return labelService.update(name);
+  }
+
 }

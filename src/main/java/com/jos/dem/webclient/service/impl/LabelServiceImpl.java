@@ -3,6 +3,7 @@ package com.jos.dem.webclient.service.impl;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.stereotype.Service;
@@ -23,9 +24,12 @@ public class LabelServiceImpl implements LabelService {
   @Autowired
   private LabelCreator labelCreator;
 
+  @Value("${github.labels.path}")
+  private String githubLabelsPath;
+
   public Mono<LabelResponse> create() {
     return webClient.post()
-      .uri("/repos/josdem/webclient-workshop/labels").accept(APPLICATION_JSON)
+      .uri(githubLabelsPath).accept(APPLICATION_JSON)
       .body(Mono.just(labelCreator.create()), Label.class)
       .retrieve()
       .bodyToMono(LabelResponse.class);
@@ -33,7 +37,7 @@ public class LabelServiceImpl implements LabelService {
 
   public Mono<ClientResponse> update(String name){
     return webClient.patch()
-      .uri("/repos/josdem/webclient-workshop/labels/" + name).accept(APPLICATION_JSON)
+      .uri(githubLabelsPath + name).accept(APPLICATION_JSON)
       .body(Mono.just(labelCreator.update()), Label.class)
       .exchange();
   }

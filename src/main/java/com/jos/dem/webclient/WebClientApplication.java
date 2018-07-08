@@ -14,8 +14,8 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:application.properties")
 public class WebClientApplication {
 
-  @Value("${gitHubUrl}")
-  private String gitHubUrl;
+  @Value("${github.api.url}")
+  private String githubApiUrl;
   @Value("${username}")
   private String username;
   @Value("${token}")
@@ -25,7 +25,7 @@ public class WebClientApplication {
   public WebClient webClient() {
     return WebClient
       .builder()
-        .baseUrl(gitHubUrl)
+        .baseUrl(githubApiUrl)
         .defaultHeader("Authorization", "Basic " + Base64Utils
           .encodeToString((username + ":" + token).getBytes(UTF_8)))
       .build();

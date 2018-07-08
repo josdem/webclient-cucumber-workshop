@@ -13,24 +13,20 @@ import javax.annotation.PostConstruct;
 import com.jos.dem.webclient.model.Label;
 import com.jos.dem.webclient.model.LabelResponse;
 import com.jos.dem.webclient.service.LabelService;
+import com.jos.dem.webclient.util.LabelCreator;
 
 @Service
 public class LabelServiceImpl implements LabelService {
 
   @Autowired
   private WebClient webClient;
-
-  private Label label;
-
-  @PostConstruct
-  public void setup(){
-    label = new Label("cucumber", "Cucumber is a very powerful testing framework written in the Ruby programming language","ed14c5");
-  }
+  @Autowired
+  private LabelCreator labelCreator;
 
   public Mono<LabelResponse> create() {
     return webClient.post()
       .uri("/repos/josdem/webclient-workshop/labels").accept(APPLICATION_JSON)
-      .body(Mono.just(label), Label.class)
+      .body(Mono.just(labelCreator.create()), Label.class)
       .retrieve()
       .bodyToMono(LabelResponse.class);
   }

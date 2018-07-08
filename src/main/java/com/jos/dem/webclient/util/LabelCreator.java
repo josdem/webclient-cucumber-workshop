@@ -12,4 +12,11 @@ public class LabelCreator{
     return label;
   }
 
+  public Label update(){
+    label.setName("spock");
+    label.setDescription("Spock is a testing and specification framework for Java and Groovy applications. It is beautiful and highly expressive");
+    label.setColor("ff0000");
+    return label;
+  }
+
 }

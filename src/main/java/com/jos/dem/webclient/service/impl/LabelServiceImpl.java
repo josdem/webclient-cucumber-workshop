@@ -34,6 +34,7 @@ public class LabelServiceImpl implements LabelService {
   public Mono<ClientResponse> update(String name){
     return webClient.patch()
       .uri("/repos/josdem/webclient-workshop/labels/" + name).accept(APPLICATION_JSON)
+      .body(Mono.just(labelCreator.update()), Label.class)
       .exchange();
   }
 

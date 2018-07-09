@@ -4,8 +4,6 @@ import static org.springframework.http.HttpStatus.OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.springframework.web.reactive.function.client.ClientResponse;
-import com.jos.dem.webclient.model.LabelResponse;
-
 import java.util.List;
 
 import cucumber.api.java.en.Then;

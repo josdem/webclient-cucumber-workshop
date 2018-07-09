@@ -10,8 +10,6 @@ import cucumber.api.java.en.Then;
 
 public class LabelUpdateTest extends LabelIntegrationTest {
 
-  private LabelResponse response;
-
   @Then("^User updates label$")
   public void shouldCreateLabel() throws Exception {
     ClientResponse response = update("cucumber")

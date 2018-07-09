@@ -10,11 +10,9 @@ import cucumber.api.java.en.Then;
 
 public class LabelDeleteTest extends LabelIntegrationTest {
 
-  private LabelResponse response;
-
   @Then("^User deletes label$")
   public void shouldDeleteLabel() throws Exception {
-    ClientResponse response = update("spock")
+    ClientResponse response = delete("spock")
       .block();
 
     assertEquals(NO_CONTENT, response.statusCode(), "Should delete label");

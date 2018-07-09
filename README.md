@@ -1,7 +1,7 @@
 WebClient Workshop
 ---------------------------------------
 
-Webflux web client configuration and examples using [GitHub API v3](https://developer.github.com/v3/?)
+Webflux [WebClient](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-webclient.html) along with [Cucumber](https://cucumber.io/) and [Junit 5](https://junit.org/junit5/) to create client test automation to the [GitHub API v3](https://developer.github.com/v3/?)
 
 #### Features
 

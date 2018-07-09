@@ -30,4 +30,8 @@ public class LabelIntegrationTest {
     return labelService.update(name);
   }
 
+  Mono<ClientResponse> delete(String name) throws Exception {
+    return labelService.delete(name);
+  }
+
 }

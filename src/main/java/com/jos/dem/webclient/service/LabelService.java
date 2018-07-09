@@ -8,5 +8,6 @@ public interface LabelService {
 
   Mono<LabelResponse> create();
   Mono<ClientResponse> update(String name);
+  Mono<ClientResponse> delete(String name);
 
 }

@@ -42,4 +42,10 @@ public class LabelServiceImpl implements LabelService {
       .exchange();
   }
 
+  public Mono<ClientResponse> delete(String name){
+    return webClient.delete()
+      .uri(githubLabelsPath + "/" + name).accept(APPLICATION_JSON)
+      .exchange();
+  }
+
 }

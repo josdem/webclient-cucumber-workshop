@@ -1,6 +1,8 @@
 package com.jos.dem.webclient;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.jos.dem.webclient.model.SSHKey;
 import com.jos.dem.webclient.model.PublicEmail;
@@ -33,8 +35,15 @@ public class UserGetTest extends UserIntegrationTest {
       .collectList()
       .block();
 
+    PublicEmail email = emails.get(0);
+
     assertTrue(emails.size() == 1,  () -> "Should be 1 email");
-    assertTrue(emails.contains(new PublicEmail("joseluis.delacruz@gmail.com", true, true, "public")), () -> "Should contains josdem's primary email");
+    assertAll("email",
+        () -> assertEquals(email.getEmail(), "joseluis.delacruz@gmail.com", "Should contains josdem's email"),
+        () -> assertEquals(email.getVerified(), true, "Should be verified"),
+        () -> assertEquals(email.getPrimary(), true, "Should be primary"),
+        () -> assertEquals(email.getVisibility(), "public", "Should be public")
+    );
   }
 
 }

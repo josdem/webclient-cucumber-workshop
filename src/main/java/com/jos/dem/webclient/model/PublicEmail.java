@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 public class PublicEmail {
   private String email;
-  private boolean verified;
-  private boolean primary;
+  private Boolean verified;
+  private Boolean primary;
   private String visibility;
 }

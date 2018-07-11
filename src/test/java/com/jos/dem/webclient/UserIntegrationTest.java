@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import com.jos.dem.webclient.model.SSHKey;
 import com.jos.dem.webclient.model.PublicEmail;
 import com.jos.dem.webclient.service.UserService;
 

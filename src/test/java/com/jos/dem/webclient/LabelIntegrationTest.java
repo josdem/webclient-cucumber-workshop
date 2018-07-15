@@ -5,9 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
-
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
 import org.springframework.web.reactive.function.client.ClientResponse;
 
 import com.jos.dem.webclient.model.LabelResponse;

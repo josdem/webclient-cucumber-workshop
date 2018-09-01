@@ -5,5 +5,5 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources/user.feature", "src/test/resources/label.feature"})
+@CucumberOptions(features = "src/test/resources")
 public class CucumberTest {}

@@ -1,11 +1,13 @@
 package com.jos.dem.webclient.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class LabelResponse {
   private Long id;

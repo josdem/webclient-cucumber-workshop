@@ -2,7 +2,7 @@ buildscript {
   ext {
     springBootVersion = '2.0.5.RELEASE'
     junitJupiterVersion = '5.3.1'
-    cucumberVersion = '3.0.2'
+    cucumberVersion = '1.2.5'
 	}
 	repositories {
 		mavenCentral()
@@ -30,8 +30,9 @@ dependencies {
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
-  testCompile("io.cucumber:cucumber-java8:$cucumberVersion")
-  testCompile("io.cucumber:cucumber-junit:$cucumberVersion")
+  testCompile("info.cukes:cucumber-java:$cucumberVersion")
+  testCompile("info.cukes:cucumber-junit:$cucumberVersion")
+  testCompile("info.cukes:cucumber-spring:$cucumberVersion")
   testCompile("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
   testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }

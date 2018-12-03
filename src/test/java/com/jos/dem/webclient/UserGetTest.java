@@ -14,12 +14,18 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import reactor.core.publisher.Flux;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class UserGetTest extends UserIntegrationTest {
 
   private List<SSHKey> keys;
 
+  private Logger log = LoggerFactory.getLogger(this.getClass());
+
   @Then("^User gets his SSH keys$")
   public void shouldGetKeys() throws Exception {
+    log.info("Running: User gets his SSH keys");
     List<SSHKey> keys = getKeys()
       .collectList()
       .block();
@@ -28,6 +34,7 @@ public class UserGetTest extends UserIntegrationTest {
 
   @Then("^User gets his public emails$")
   public void shouldGetEmails() throws Exception {
+    log.info("Running: User gets his public emails");
     List<PublicEmail> emails = getEmails()
       .collectList()
       .block();

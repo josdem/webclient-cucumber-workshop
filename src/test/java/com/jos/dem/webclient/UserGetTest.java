@@ -1,7 +1,5 @@
 package com.jos.dem.webclient;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,6 +10,8 @@ import com.jos.dem.webclient.model.PublicEmail;
 
 import java.util.List;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import reactor.core.publisher.Flux;
@@ -25,7 +25,7 @@ public class UserGetTest extends UserIntegrationTest {
 
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
-  @BeforeAll
+  @Before
   public void setup() {
     log.info("Before any test execution");
   }
@@ -56,7 +56,7 @@ public class UserGetTest extends UserIntegrationTest {
     );
   }
 
-  @AfterAll
+  @After
   public void tearDown() {
     log.info("After all test execution");
   }

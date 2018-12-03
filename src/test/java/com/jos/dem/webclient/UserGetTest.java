@@ -1,5 +1,7 @@
 package com.jos.dem.webclient;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -22,6 +24,11 @@ public class UserGetTest extends UserIntegrationTest {
   private List<SSHKey> keys;
 
   private Logger log = LoggerFactory.getLogger(this.getClass());
+
+  @BeforeAll
+  public void setup() {
+    log.info("Before any test execution");
+  }
 
   @Then("^User gets his SSH keys$")
   public void shouldGetKeys() throws Exception {
@@ -47,6 +54,11 @@ public class UserGetTest extends UserIntegrationTest {
         () -> assertTrue(email.getPrimary(), "Should be primary"),
         () -> assertEquals("public", email.getVisibility(), "Should be public")
     );
+  }
+
+  @AfterAll
+  public void tearDown() {
+    log.info("After all test execution");
   }
 
 }

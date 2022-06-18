@@ -36,7 +36,7 @@ public class UserGetTest extends UserIntegrationTest {
     List<SSHKey> keys = getKeys()
       .collectList()
       .block();
-    assertEquals(4, keys.size(),  () -> "Should be 4 keys");
+    assertEquals(9, keys.size(),  () -> "Should be 4 keys");
   }
 
   @Then("^User gets his public emails$")
